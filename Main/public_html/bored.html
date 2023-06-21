@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Car Animation</title>
+      <link rel="stylesheet" href="styles.css" />
+      <script>
+          import gsap from 'https://cdn.skypack.dev/gsap@3.11.0'
+let active = true
+
+
+const UPDATE_ROTATION = ({ x }) => {
+	gsap.set(document.documentElement, {
+		'--rotation-y': gsap.utils.mapRange(0, window.innerWidth, -180, 180)(x)
+	})
+}
+
+document.body.addEventListener('pointermove', UPDATE_ROTATION)
+
+document.body.addEventListener('click', () => {
+	active = !active
+	document.documentElement.style.setProperty('--on', active ? 1 : 0)
+})
+      </script>
+   </head>
+   <div class="scene">
+     <div class="road">
+       <div class="cuboid scene__road">
+         <div class="cuboid__side">
+           <div class="road__markings road__markings--top"></div>
+         </div>
+         <div class="cuboid__side">
+           <div class="road__markings road__markings--back"></div>
+         </div>
+         <div class="cuboid__side">
+           <div class="road__markings road__markings--bottom"></div>
+         </div>
+         <div class="cuboid__side">
+           <div class="road__markings road__markings--front"></div>
+         </div>
+         <div class="cuboid__side"></div>
+         <div class="cuboid__side"></div>
+       </div>
+     </div>
+     <div class="car__bob">
+       <div class="car">
+         <div class="car__body car__body--bottom">
+           <div class="cuboid body body--bottom">
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+           </div>
+         </div>
+         <div class="car__body car__body--top">
+           <div class="cuboid body body--top">
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side">
+               <div class="cabin">
+                 <div class="cuboid">
+                   <div class="cuboid__side">
+                   </div>
+                   <div class="cuboid__side"></div>
+                   <div class="cuboid__side"></div>
+                   <div class="cuboid__side"></div>
+                   <div class="cuboid__side">
+                     <div class="handle handle--left">
+                       <div class="cuboid">
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                       </div>
+                     </div>
+                     <div class="handle handle--right">
+                       <div class="cuboid">
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                       </div>
+                     </div>
+                     <div class="steering-wheel">
+                       <div class="cuboid">
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                       </div>
+                     </div>
+                     <div class="seat">
+                       <div class="cuboid">
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                       </div>
+                     </div>
+                     <div class="seat seat--bottom">
+                       <div class="cuboid">
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                         <div class="cuboid__side"></div>
+                       </div>
+                     </div>
+                   </div>
+                   <div class="cuboid__side"></div>
+                 </div>
+               </div>
+             </div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+           </div>
+         </div>
+         <div class="car__wheel car__wheel--nsf car__wheel--f">
+           <div class="cuboid wheel">
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+           </div>
+         </div>
+         <div class="car__wheel car__wheel--nsr car__wheel--r">
+           <div class="cuboid wheel">
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+           </div>
+         </div>
+         <div class="car__wheel car__wheel--osf car__wheel--f">
+           <div class="cuboid wheel">
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+           </div>
+         </div>
+         <div class="car__wheel car__wheel--osr car__wheel--r">
+           <div class="cuboid wheel">
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+           </div>
+         </div>
+         <div class="car__mirrors">
+           <div class="car__mirror car__mirror--left">
+             <div class="cuboid mirror">
+               <div class="cuboid__side"></div>
+               <div class="cuboid__side"></div>
+               <div class="cuboid__side"></div>
+               <div class="cuboid__side"></div>
+               <div class="cuboid__side"></div>
+               <div class="cuboid__side"></div>
+             </div>
+           </div>
+           <div class="car__mirror car__mirror--right">
+             <div class="cuboid mirror">
+               <div class="cuboid__side"></div>
+               <div class="cuboid__side"></div>
+               <div class="cuboid__side"></div>
+               <div class="cuboid__side"></div>
+               <div class="cuboid__side"></div>
+               <div class="cuboid__side"></div>
+             </div>
+           </div>
+         </div>
+         <div class="car__bumper car__bumper--front">
+           <div class="cuboid bumper">
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+           </div>
+         </div>
+         <div class="car__bumper car__bumper--rear">
+           <div class="cuboid bumper">
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+             <div class="cuboid__side"></div>
+           </div>
+         </div>
+         <div class="car__shadow"></div>
+         <div class="car__headlights"></div>
+       </div>
+     </div>
+   </div>
+
+   
+   </body>
+</html>
