@@ -1,4 +1,5 @@
-## Project Title: Secu-Star
+## Secu-Star, An Open-Source App Store
+![Banner](https://ibb.co/Df06Vh8)
 
 ### Synopsis
 Secu-Star is a revolutionary appstore designed for new Windows laptop users. It addresses the challenge of setting up computers from scratch by providing a secure, user-friendly platform for discovering and installing essential applications. Unlike traditional stores, Secu-Star curates a diverse selection of software, ensuring that users have access to popular, new, and feature-packed applications.
